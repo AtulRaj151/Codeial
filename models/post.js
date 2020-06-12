@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 const postSchema = mongoose.Schema({
 
          content:{
@@ -21,6 +22,8 @@ const postSchema = mongoose.Schema({
 },{
     timestamps:true
 })
+
+
 
 const Post = mongoose.model('Post',postSchema);
 module.exports = Post;
