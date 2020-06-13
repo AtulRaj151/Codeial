@@ -9,6 +9,18 @@ module.exports.create = async function(req,res){
                 content:req.body.content,
                 user:req.user._id
         });
+
+          if(req.xhr){
+
+            return res.status(200).json({
+
+              data:{
+                 post:post
+              },
+              message:"post created"
+
+            });
+          }
         req.flash('success','Post published');
         return res.redirect('back');
           
@@ -38,6 +50,19 @@ module.exports.destroy = async function(req,res){
 
             post.remove();
            await Comment.deleteMany({post:req.params.id});
+
+           //ajax
+
+           if(req.xhr){
+               return res.status(200).json({
+
+                   data:{
+
+                     post_id:req.params.id
+                   },
+                   message: "Post Deleted Successfully"
+               });
+           }
            req.flash('success','comment deleted');
                  return res.redirect('back');
         
@@ -50,7 +75,7 @@ module.exports.destroy = async function(req,res){
       } catch (error) {
         req.flash('error',error);
         console.log('error',error);
-            return;
+            return res.redirect('back');
           
       }
 
