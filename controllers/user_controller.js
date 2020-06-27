@@ -120,10 +120,9 @@ module.exports.create = function(req,res){
 
        });
 }
-
 module.exports.createSession = function(req,res){
     console.log('In createSession')
-    req.flash('success',"logged in successfully");
+    req.flash('success',"logged uiin successfully");
    return res.redirect('/');
 }
 
