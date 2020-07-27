@@ -69,6 +69,7 @@ class PostComments{
                             
                             ${comment.content}
                             <br>
+                            
                             <small>
                                 ${comment.user.name}
                             </small>

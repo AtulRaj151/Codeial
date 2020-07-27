@@ -1,5 +1,6 @@
-<h1>Home Page</h1>
-
+<link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/chat_box.css">
+<div id="home-container">
 <section id="feed-posts">
     <% if(locals.user){ %>
       <h4>Posts</h4>
@@ -34,8 +35,12 @@
         </p>
 
     <% } %>
-
+  
 </section>
+
+<%- include('_chat_box') -%>
+</div>
+
 <script src="/js/home_post.js">
 </script>
 <script src="/js/home_post_comments.js"></script>
