@@ -12,7 +12,19 @@
        <small>
           <%= post.user.name %>
        </small>
-
+          <!-- CHANGE :: display the likes of this post, if the user is logged in, then show the link to toggle likes, else, just show the count -->
+          <br>
+          <!-- study about the data attribute -->
+      <small>
+          <% if (locals.user){ %>
+              <a class="toggle-like-button" data-likes="<%= post.like.length %>" href="/like/toggle/?id=<%=post._id%>&type=Post">
+                      <%= post.like.length %> Likes
+              </a>
+          <% }else{ %>
+              <%= post.like.length %> Likes
+          <% } %>
+      </small>
+       
     </p>
 
     <div class="post-comments">

@@ -18,7 +18,13 @@ const postSchema = mongoose.Schema({
                    type:mongoose.Schema.Types.ObjectId,
                    ref:'Comment'
                }
-         ]
+         ],
+         like: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Like'
+            }
+        ]
 },{
     timestamps:true
 })
