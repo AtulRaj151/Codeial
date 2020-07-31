@@ -2,6 +2,8 @@ const express = require('express');
 const env = require('./config/environment');
 const cookieParser = require('cookie-parser');
 const app = express();
+
+require('./config/view-helper')(app);
 const port  = 8000;
 const expressLayout = require('express-ejs-layouts');
 const logger = require('morgan');
@@ -34,7 +36,7 @@ const flash = require('connect-flash');
 const customMWare = require('./config/middleware');
 
 //google authentication
-if(env.name == 'developmen'){
+if(env.name == 'development'){
 
 app.use(sassMiddleware({
      src: path.join(__dirname,env.asset_path,'scss'),
@@ -49,7 +51,7 @@ app.use(sassMiddleware({
 
 app.use(express.urlencoded());
 app.use(cookieParser());
-
+console.log("************",env.asset_path);
 app.use(express.static(env.asset_path));
 
 //make the upload path availabe to the browser
