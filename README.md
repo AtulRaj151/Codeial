@@ -10,3 +10,6 @@
 - google authentication
 - beautiful notificatin using notyjs
 - Api version of this application
+- load balancing using kue
+- request management
+
