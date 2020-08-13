@@ -1,4 +1,4 @@
-# Codeial ( A Social Media website
+# Codeial ( A Social Media website ) Express JS
 
 ## Description
 - User can send messege to their friend via socket
